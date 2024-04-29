@@ -1,40 +1,50 @@
 package org.sillysociety.service.impl;
 
-import org.sillysociety.graphqlserver.models.Stylist;
-import org.sillysociety.graphqlserver.repository.StylistRepository;
-import org.sillysociety.graphqlserver.service.StylistService;
+import org.sillysociety.models.swa.User;
+import org.sillysociety.repository.swa.UserRepository;
+import org.sillysociety.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class StylistServiceImpl implements StylistService {
+public class UserServiceImpl implements UserService {
     @Autowired
-    private StylistRepository stylistRepository;
+    private UserRepository userRepository;
 
     @Override
-    public Stylist addStylist(Stylist stylist) {
-        return stylistRepository.save(stylist);
+    public User addUser(User user) {
+        return userRepository.save(user);
     }
 
     @Override
-    public void delete(Stylist stylist) {
-        stylistRepository.delete(stylist);
+    public void delete(User user) {
+        userRepository.delete(user);
     }
 
     @Override
-    public Stylist getById(Integer id) {
-        return stylistRepository.findById(id).orElse(null);
+    public User getById(Integer id) {
+        return userRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Stylist> getAllStylists() {
-        return (List<Stylist>) stylistRepository.findAll();
+    public List<User> getAllUsers() {
+        return (List<User>) userRepository.findAll();
     }
 
     @Override
-    public Stylist updateStylist(Stylist stylist) {
-        return stylistRepository.save(stylist);
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User getByLogin(String login) {
+        return userRepository.findByLogin(login);
+    }
+
+    @Override
+    public User getByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }

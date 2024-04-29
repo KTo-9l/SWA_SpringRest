@@ -1,4 +1,4 @@
-package org.sillysociety.models;
+package org.sillysociety.models.swa;
 
 import jakarta.persistence.*;
 import java.util.Objects;
@@ -8,7 +8,7 @@ import java.util.Objects;
 public class User {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "login")
     private String login;
@@ -17,9 +17,9 @@ public class User {
     @Column(name = "email")
     private String email;
     @Column(name = "role")
-    private String role;
+    private String role = "user";
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
     public void setId(int id) {

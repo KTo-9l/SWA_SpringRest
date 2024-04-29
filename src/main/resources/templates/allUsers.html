@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Users</title>
 </head>
 <body>
-$END$
+    <h1>All users will be here soon...</h1>
+    <table border="20px">
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Role</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.login}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.role}"></td>
+        </tr>
+    </table>
+
+    <table border="20px">
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Password</th>
+        </tr>
+        <tr th:each="entity : ${exp_br}">
+            <td th:text="${entity.brigade_id}"></td>
+            <td th:text="${entity.experiment_id}"></td>
+        </tr>
+    </table>
 </body>
 </html>

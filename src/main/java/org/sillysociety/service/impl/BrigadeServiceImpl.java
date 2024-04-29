@@ -1,7 +1,7 @@
 package org.sillysociety.service.impl;
 
-import org.sillysociety.models.Brigade;
-import org.sillysociety.repository.BrigadeRepository;
+import org.sillysociety.models.chemistry.Brigade;
+import org.sillysociety.repository.chemistry.BrigadeRepository;
 import org.sillysociety.service.BrigadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,13 +14,13 @@ public class BrigadeServiceImpl implements BrigadeService {
     private BrigadeRepository brigadeRepository;
 
     @Override
-    public Brigade addBrigade(Brigade client) {
-        return brigadeRepository.save(client);
+    public Brigade addBrigade(Brigade brigade) {
+        return brigadeRepository.save(brigade);
     }
 
     @Override
-    public void delete(Brigade client) {
-        brigadeRepository.delete(client);
+    public void delete(Brigade brigade) {
+        brigadeRepository.delete(brigade);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class BrigadeServiceImpl implements BrigadeService {
     }
 
     @Override
-    public Brigade updateBrigade(Brigade client) {
-        return brigadeRepository.save(client);
+    public Brigade updateBrigade(Brigade brigade) {
+        return brigadeRepository.save(brigade);
     }
 }

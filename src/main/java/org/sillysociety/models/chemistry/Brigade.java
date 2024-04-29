@@ -1,4 +1,4 @@
-package org.sillysociety.models;
+package org.sillysociety.models.chemistry;
 
 import jakarta.persistence.*;
 

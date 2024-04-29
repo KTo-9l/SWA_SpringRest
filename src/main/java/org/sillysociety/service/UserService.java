@@ -1,13 +1,15 @@
 package org.sillysociety.service;
 
-import org.sillysociety.graphqlserver.models.Stylist;
+import org.sillysociety.models.swa.User;
 
 import java.util.List;
 
-public interface StylistService {
-    Stylist addStylist(Stylist stylist);
-    void delete(Stylist stylist);
-    Stylist getById(Integer id);
-    List<Stylist> getAllStylists();
-    Stylist updateStylist(Stylist stylist);
+public interface UserService {
+    User addUser(User user);
+    void delete(User user);
+    User getById(Integer id);
+    List<User> getAllUsers();
+    User updateUser(User user);
+    User getByLogin(String login);
+    User getByEmail(String email);
 }

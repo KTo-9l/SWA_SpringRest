@@ -1,40 +1,40 @@
 package org.sillysociety.service.impl;
 
-import org.sillysociety.models.Brigade;
-import org.sillysociety.repository.BrigadeRepository;
-import org.sillysociety.service.BrigadeService;
+import org.sillysociety.models.chemistry.ExperimentBrigade;
+import org.sillysociety.repository.chemistry.ExperimentBrigadeRepository;
+import org.sillysociety.service.ExperimentBrigadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class BrigadeServiceImpl implements BrigadeService {
+public class ExperimentBrigadeServiceImpl implements ExperimentBrigadeService {
     @Autowired
-    private BrigadeRepository brigadeRepository;
+    private ExperimentBrigadeRepository experimentBrigadeRepository;
 
     @Override
-    public Brigade addBrigade(Brigade brigade) {
-        return brigadeRepository.save(brigade);
+    public ExperimentBrigade addExperimentBrigade(ExperimentBrigade brigade) {
+        return experimentBrigadeRepository.save(brigade);
     }
 
     @Override
-    public void delete(Brigade brigade) {
-        brigadeRepository.delete(brigade);
+    public void delete(ExperimentBrigade brigade) {
+        experimentBrigadeRepository.delete(brigade);
     }
 
     @Override
-    public Brigade getById(Integer id) {
-        return brigadeRepository.findById(id).orElse(null);
+    public ExperimentBrigade getById(Integer id) {
+        return experimentBrigadeRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Brigade> getAllBrigades() {
-        return (List<Brigade>) brigadeRepository.findAll();
+    public List<ExperimentBrigade> getAllExperimentBrigades() {
+        return (List<ExperimentBrigade>) experimentBrigadeRepository.findAll();
     }
 
     @Override
-    public Brigade updateBrigade(Brigade brigade) {
-        return brigadeRepository.save(brigade);
+    public ExperimentBrigade updateExperimentBrigade(ExperimentBrigade brigade) {
+        return experimentBrigadeRepository.save(brigade);
     }
 }

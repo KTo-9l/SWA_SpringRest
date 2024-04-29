@@ -1,4 +1,4 @@
-package org.sillysociety.models;
+package org.sillysociety.models.chemistry;
 
 import jakarta.persistence.*;
 
@@ -54,5 +54,14 @@ public class Experiment {
 
     public void setBrigade_id(Integer brigade_id) {
         this.brigade_id = brigade_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Experiment{" +
+                "experiment_id=" + experiment_id +
+                ", experiment_name='" + experiment_name + '\'' +
+                ", experiment_status=" + experiment_status +
+                '}';
     }
 }

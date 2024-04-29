@@ -1,40 +1,40 @@
 package org.sillysociety.service.impl;
 
-import org.sillysociety.models.Brigade;
-import org.sillysociety.repository.BrigadeRepository;
-import org.sillysociety.service.BrigadeService;
+import org.sillysociety.models.chemistry.Experiment;
+import org.sillysociety.repository.chemistry.ExperimentRepository;
+import org.sillysociety.service.ExperimentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class BrigadeServiceImpl implements BrigadeService {
+public class ExperimentServiceImpl implements ExperimentsService {
     @Autowired
-    private BrigadeRepository brigadeRepository;
+    private ExperimentRepository experimentRepository;
 
     @Override
-    public Brigade addBrigade(Brigade client) {
-        return brigadeRepository.save(client);
+    public Experiment addExperiment(Experiment experiment) {
+        return experimentRepository.save(experiment);
     }
 
     @Override
-    public void delete(Brigade client) {
-        brigadeRepository.delete(client);
+    public void delete(Experiment experiment) {
+        experimentRepository.delete(experiment);
     }
 
     @Override
-    public Brigade getById(Integer id) {
-        return brigadeRepository.findById(id).orElse(null);
+    public Experiment getById(Integer id) {
+        return experimentRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Brigade> getAllBrigades() {
-        return (List<Brigade>) brigadeRepository.findAll();
+    public List<Experiment> getAllExperiments() {
+        return (List<Experiment>) experimentRepository.findAll();
     }
 
     @Override
-    public Brigade updateBrigade(Brigade client) {
-        return brigadeRepository.save(client);
+    public Experiment updateExperiment(Experiment experiment) {
+        return experimentRepository.save(experiment);
     }
 }

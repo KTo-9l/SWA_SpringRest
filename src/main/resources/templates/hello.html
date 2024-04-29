@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
 </head>
 <body>
-$END$
+    <h1>Hello!</h1>
+
+    <table border="20px">
+        <tr>
+            <th>Ex Id</th>
+            <th>Exp Name</th>
+            <th>Status</th>
+            <th>Br Id</th>
+            <th>1st</th>
+            <th>2nd</th>
+        </tr>
+        <tr th:each="entity : ${exp_br}">
+            <td th:text="${entity.experiment_id.experiment_id}"></td>
+            <td th:text="${entity.experiment_id.experiment_name}"></td>
+            <td th:text="${entity.experiment_id.experiment_status}"></td>
+            <td th:text="${entity.brigade_id.brigade_id}"></td>
+            <td th:text="${entity.brigade_id.member_first}"></td>
+            <td th:text="${entity.brigade_id.member_second}"></td>
+        </tr>
+    </table>
 </body>
 </html>

@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Login</title>
 </head>
 <body>
-$END$
+<form action="login" method="post">
+    Enter name: <input type="text" name="login"><br>
+    Enter password: <input type="password" name="pass"><br>
+    <input type="submit" value="login"><br>
+
+    New in? Please, <a href="register">register!</a><br>
+    Wanna check a colors? <a href="colors">Click it</a><br>
+</form>
+<form action="getUsers" method="get">
+    Test our users db: <input type="submit" value="Click me">
+</form>
 </body>
 </html>
