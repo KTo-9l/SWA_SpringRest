@@ -12,4 +12,5 @@ public interface UserService {
     User updateUser(User user);
     User getByLogin(String login);
     User getByEmail(String email);
+    Boolean existsByLogin(String login);
 }
