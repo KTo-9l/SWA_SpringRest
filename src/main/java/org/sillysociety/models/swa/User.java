@@ -21,6 +21,14 @@ public class User {
     @Column(name = "deleted", nullable = false)
     private Boolean deleted = false;
 
+    public User(String login, String password, String email, String role, Boolean deleted) {
+        this.login = login;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+        this.deleted = deleted;
+    }
+    public User() {}
 
     public Integer getId() {
         return id;

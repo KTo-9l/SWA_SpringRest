@@ -22,7 +22,7 @@ public class LoginPageController {
             if (user.getRole().equals("admin")) {
                 return "redirect:/getUsers";
             } else {
-                return "redirect:/hello";
+                return "redirect:/getExperiments";
             }
         } else {
             return "index";
@@ -40,11 +40,12 @@ public class LoginPageController {
     @GetMapping("/getUsers")
     public String getUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
+        model.addAttribute("exp_br", experimentBrigadeService.getAllExperimentBrigades());
         return "allUsers";
     }
-    @GetMapping("/hello")
+    @GetMapping("/getExperiments")
     public String hello(Model model) {
         model.addAttribute("exp_br", experimentBrigadeService.getAllExperimentBrigades());
-        return "hello";
+        return "experiments";
     }
 }

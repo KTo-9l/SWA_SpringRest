@@ -23,7 +23,7 @@ public class RegisterPageController {
             newUser.setPassword(pass);
             newUser.setEmail(email);
             userService.addUser(newUser);
-            return "hello";
+            return "experiments";
         }
     }
 }

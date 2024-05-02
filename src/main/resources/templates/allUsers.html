@@ -14,6 +14,7 @@
             <th>Password</th>
             <th>Email</th>
             <th>Role</th>
+            <th>Deleted</th>
         </tr>
         <tr th:each="user : ${users}">
             <td th:text="${user.id}"></td>
@@ -21,18 +22,26 @@
             <td th:text="${user.password}"></td>
             <td th:text="${user.email}"></td>
             <td th:text="${user.role}"></td>
+            <td th:text="${user.deleted}"></td>
         </tr>
     </table>
 
     <table border="20px">
         <tr>
-            <th>ID</th>
-            <th>Login</th>
-            <th>Password</th>
+            <th>Ex Id</th>
+            <th>Exp Name</th>
+            <th>Status</th>
+            <th>Br Id</th>
+            <th>1st</th>
+            <th>2nd</th>
         </tr>
         <tr th:each="entity : ${exp_br}">
-            <td th:text="${entity.brigade_id}"></td>
-            <td th:text="${entity.experiment_id}"></td>
+            <td th:text="${entity.experiment_id.experiment_id}"></td>
+            <td th:text="${entity.experiment_id.experiment_name}"></td>
+            <td th:text="${entity.experiment_id.experiment_status}"></td>
+            <td th:text="${entity.brigade_id.brigade_id}"></td>
+            <td th:text="${entity.brigade_id.member_first}"></td>
+            <td th:text="${entity.brigade_id.member_second}"></td>
         </tr>
     </table>
 </body>
